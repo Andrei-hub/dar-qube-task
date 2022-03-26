@@ -1,27 +1,17 @@
 import React from 'react';
-import {useDispatch, useSelector} from "react-redux";
-import {activeTabSelector} from "appRedux/News/selectors";
-import {setActiveTab} from "appRedux/News/actionCreators";
-import { StyledHeader, Tabs } from './Header.styled'
-import {PostType} from "types";
+import { NavLink } from 'react-router-dom';
+import { BOOKMARKS_PATH, NEWS_PATH } from "constants/api";
+import { StyledHeader, Navigation } from './Header.styled'
 
 const Header = () => {
-    const dispatch = useDispatch();
-    const activeTab = useSelector(activeTabSelector);
-    const onClick = (tab: PostType) => dispatch(setActiveTab(tab));
+const handleActive = (isActive:boolean):string => (isActive ? 'active' : 'inactive');
     return (
-        <StyledHeader >
-            <Tabs className="tabs">
-            {/*    <Tab active={activeTab.includes(PostType.NEWS)} onClick={() => onClick(PostType.NEWS)}>*/}
-            {/*        News*/}
-            {/*    </Tab>*/}
-            {/*    <Tab*/}
-            {/*        active={activeTab.includes(PostType.BOOKMARKS)}*/}
-            {/*        onClick={() => onClick(PostType.BOOKMARKS)}*/}
-            {/*    >*/}
-            {/*        Bookmarks*/}
-            {/*    </Tab>*/}
-            </Tabs>
+        <StyledHeader>
+            <Navigation>
+                    <NavLink to={NEWS_PATH} className={({ isActive }) => handleActive(isActive)}>News</NavLink>
+                    <NavLink to={BOOKMARKS_PATH} className={({ isActive }) => handleActive(isActive)}>Bookmarks</NavLink>
+            </Navigation>
+
             {/*<div>*/}
             {/*    <Iput type="text" placeholder="Search" onChange={handleChange} />*/}
             {/*</div>*/}

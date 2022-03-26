@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import {useDispatch} from "react-redux";
 import {thunkSetNews} from "./appRedux/News/actionCreators";
 import Header from "./components/Header";
-import News from "./components/News";
+import Main from "./components/Main";
 import './App.css';
 
 function App() {
@@ -12,7 +12,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <News />
+      <Main />
     </div>
   );
 }

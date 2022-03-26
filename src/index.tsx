@@ -8,16 +8,20 @@ import reportWebVitals from './reportWebVitals';
 import {ThemeProvider} from "styled-components";
 import GlobalStyles from 'components/Styles/Global';
 import {darkTheme} from "./components/Styles/theme";
+import {BrowserRouter} from "react-router-dom";
 
 
 ReactDOM.render(
   <React.StrictMode>
+      <BrowserRouter>
       <Provider store={store}>
           <ThemeProvider theme={darkTheme}>
             <App />
             <GlobalStyles />
           </ThemeProvider>
       </Provider>
+      </BrowserRouter>
+
   </React.StrictMode>,
   document.getElementById('root')
 );
