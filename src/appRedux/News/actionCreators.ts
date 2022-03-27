@@ -14,8 +14,13 @@ export const setNews = (payload: News['news']) => ({
     type: actionTypes.SET_NEWS as const,
     payload,
 });
-export const setActiveTab = (payload: News['activeTab']) => ({
-    type: actionTypes.SET_ACTIVE_TAB as const,
+export const setBookMark = (payload: number) => ({
+    type: actionTypes.SET_BOOK_MARK as const,
+    payload,
+});
+
+export const setSearchParams = (payload: News['searchParams']) => ({
+    type: actionTypes.SET_SEARCH_PARAMS as const,
     payload,
 });
 

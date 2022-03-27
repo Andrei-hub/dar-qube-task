@@ -12,6 +12,11 @@ const GlobalStyles = createGlobalStyle`
     font-size: 1.15em;
     margin: 0;
   }
+  .App {
+    max-width: 1439px;
+    padding: 40px 30px;
+    margin: auto;
+  }
   p {
     opacity: 0.6;
     line-height: 1.5;
