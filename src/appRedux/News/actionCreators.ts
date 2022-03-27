@@ -26,7 +26,6 @@ export const setSearchParams = (payload: News['searchParams']) => ({
 export const thunkSetNews = (): ThunkAction<void, RootState, unknown, AnyAction> => async (dispatch) => {
 	dispatch(setLoadingData(true));
 	const data = await getNews();
-	console.log(data);
 	if (data) {
 		dispatch(setNews(data));
 		dispatch(setLoadingData(false));

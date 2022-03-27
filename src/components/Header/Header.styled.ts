@@ -35,6 +35,13 @@ export const Navigation = styled.ul`
 export const SearchContainer = styled.div`
 	display: flex;
 	margin: auto 0 auto auto;
+    position: relative;
+    svg{
+      position: absolute;
+      transform: translateY(-50%);
+      top: 50%;
+      left: 10px;
+    }
       @media (max-width: 767px) {
         width: 100%;
       }
@@ -48,7 +55,8 @@ export const Search = styled.input`
 	line-height: 14px;
 	background: #191818;
 	border: 0;
-	padding: 8px;
+    border-radius: 3px;
+	padding: 8px 8px 8px 30px;
 	outline: none;
 
 	@media (max-width: 480px) {
