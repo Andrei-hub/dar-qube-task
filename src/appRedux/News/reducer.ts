@@ -2,12 +2,12 @@ import actionTypes from "./actionTypes";
 import * as actions from '../News/actionCreators';
 import {Action} from "../types";
 import {News} from "./types";
-import {PostType} from "../../types";
 
 export const initialState: News = {
     loadingData: true,
     news:[],
-    activeTab: PostType.NEWS,
+    bookMarks:[],
+    searchParams: '',
     page: 0,
     rowsPerPage: 6,
 }
@@ -24,10 +24,18 @@ const reducer = (state: News = initialState, action: Action<typeof actions>): Ne
                 ...state,
                 news:action.payload,
             };
-        case actionTypes.SET_ACTIVE_TAB:
+        case actionTypes.SET_BOOK_MARK:
+            const { payload } = action;
             return {
                 ...state,
-                activeTab:action.payload,
+                bookMarks:state.bookMarks.includes(payload)
+                        ? state.bookMarks.filter((i:number) => i !== payload)
+                        : [...state.bookMarks, payload],
+            };
+        case actionTypes.SET_SEARCH_PARAMS:
+            return {
+                ...state,
+                searchParams:action.payload,
             };
         default:
             return state;
