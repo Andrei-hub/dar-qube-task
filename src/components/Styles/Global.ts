@@ -16,6 +16,9 @@ const GlobalStyles = createGlobalStyle`
     max-width: 1439px;
     padding: 40px 30px;
     margin: auto;
+    @media (max-width: 400px) {
+      padding: 40px 15px;
+    }
   }
   p {
     opacity: 0.6;

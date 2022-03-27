@@ -5,6 +5,7 @@ export const PaginationContainer = styled('div')`
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
+    align-items: center;
 `;
 export const PaginationNumber = styled('div')`
 	display: flex;
@@ -36,6 +37,9 @@ export const Button = styled('button')`
 	color: #fff;
 	border-radius: 60px;
 	border: none;
+      @media (max-width: 360px) {
+        width: 90px;
+      }
 	&:focus {
 		outline: 0;
 	}

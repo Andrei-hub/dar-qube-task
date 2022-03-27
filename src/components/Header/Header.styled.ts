@@ -7,6 +7,13 @@ export const StyledHeader = styled.header`
 		padding: 0;
 		margin: 26px 0;
 	}
+      @media (max-width: 767px) {
+        flex-wrap: wrap;
+        padding-bottom: 20px;
+        ul {
+          margin: 18px 0;
+        }
+      }
 `;
 export const Navigation = styled.ul`
 	display: flex;
@@ -28,6 +35,9 @@ export const Navigation = styled.ul`
 export const SearchContainer = styled.div`
 	display: flex;
 	margin: auto 0 auto auto;
+      @media (max-width: 767px) {
+        width: 100%;
+      }
 `;
 
 export const Search = styled.input`
