@@ -14,11 +14,11 @@ const News = () => {
 
 	return (
 		<NewsContainer>
-			<LatestResearch>{latestNews && <Card card={latestNews} isPrimary height={'628px'} />}</LatestResearch>
+			<LatestResearch>{latestNews && <Card post={latestNews} isPrimary height={'628px'} />}</LatestResearch>
 			{news.length ? (
 				<CardContainer>
-					{currentData().map((el) => (
-						<Card key={el.id} card={el} height={'425px'} />
+					{currentData().map((news) => (
+						<Card key={news.id} post={news} height={'425px'} />
 					))}
 					<Pagination range={rangeOf} total={totalItems} prevPage={() => prev()} nexPage={() => next()} />
 				</CardContainer>

@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { BOOKMARKS_PATH, NEWS_PATH } from 'constants/api';
 import { StyledHeader, Navigation, SearchContainer, Search } from './Header.styled';
-import { setSearchParams } from '../../appRedux/News/actionCreators';
+import { setSearchParams } from 'appRedux/News/actionCreators';
 import { useDispatch } from 'react-redux';
-import { useDebounce } from '../../utils/useDebounce';
+import { useDebounce } from 'utils/useDebounce';
 
 const Header = () => {
 	const dispatch = useDispatch();

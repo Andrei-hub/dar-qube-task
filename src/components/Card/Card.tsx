@@ -20,15 +20,15 @@ import { Post } from 'types';
 import { toDate } from 'utils/date';
 import { useDispatch, useSelector } from 'react-redux';
 import { setBookMark } from 'appRedux/News/actionCreators';
-import { bookmarksSelector } from '../../appRedux/News/selectors';
+import { bookmarksSelector } from 'appRedux/News/selectors';
 
 interface Props {
-	card: Post;
+	post: Post;
 	isPrimary?: boolean;
 	height: string;
 }
 
-const Card: FC<Props> = ({ card, isPrimary, height }) => {
+const Card: FC<Props> = ({ post, isPrimary, height }) => {
 	const dispatch = useDispatch();
 	const bookmarks = useSelector(bookmarksSelector);
 	const isActive = (id: number): boolean => bookmarks.includes(id);
@@ -37,28 +37,28 @@ const Card: FC<Props> = ({ card, isPrimary, height }) => {
 	};
 
 	return (
-		<CardContainer imgUrl={card.image} isPrimary height={height}>
+		<CardContainer imgUrl={post.image} isPrimary height={height}>
 			<Header>
-				<Tag>{card.related}</Tag>
+				<Tag>{post.related}</Tag>
 				{isPrimary && <Latest>Latest Research</Latest>}
 			</Header>
 			<Content>
-				<a href={card.url} target="_blank">
-					<Headline>{card.headline}</Headline>
-					<Summary>{card.summary}</Summary>
+				<a href={post.url} target="_blank">
+					<Headline>{post.headline}</Headline>
+					<Summary>{post.summary}</Summary>
 				</a>
 				<Footer>
 					{isPrimary && (
 						<Read>
-							<a href={card.url} target="_blank">
+							<a href={post.url} target="_blank">
 								<ArrowSvg />
 								<Text>Read the research</Text>
 							</a>
 						</Read>
 					)}
-					<Date>{toDate(card.datetime, 'd MMM')}</Date>
-					<BookmarkIcon onClick={() => handleChange(card.id)}>
-						{isActive(card.id) ? <Active /> : <Inactive />}
+					<Date>{toDate(post.datetime, 'd MMM')}</Date>
+					<BookmarkIcon onClick={() => handleChange(post.id)}>
+						{isActive(post.id) ? <Active /> : <Inactive />}
 					</BookmarkIcon>
 				</Footer>
 			</Content>

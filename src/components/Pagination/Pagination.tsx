@@ -4,8 +4,8 @@ import { ButtonWrapper, Button, PaginationContainer, Range, Amount, PaginationNu
 interface Props {
 	total: number;
 	range: string;
-	prevPage: any;
-	nexPage: any;
+	prevPage: () => void;
+	nexPage: () => void;
 }
 
 const Pagination: FC<Props> = ({ total, range, prevPage, nexPage }) => {

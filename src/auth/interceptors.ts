@@ -6,7 +6,7 @@ const axiosConfig = {
 	headers: {
 		// Accept: 'application/json,text/plain',
 		// 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
-		// 'Access-Control-Allow-Origin': 'https://*.com, https://192.168.77.91:8181',
+		// 'Access-Control-Allow-Origin': 'https://*.com',
 		// 'Access-Control-Allow-Credentials': true,
 		// 'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
 		// 'Access-Control-Allow-Headers': 'DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range',
