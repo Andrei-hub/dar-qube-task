@@ -9,11 +9,11 @@ import { Empty } from '../Status';
 
 const Bookmarks = () => {
 	const bookmarks = useSelector(selectedNewsSelector);
-	const { currentData, rangeOf, totalItems, next, prev } = usePagination(bookmarks, 10);
+	const { currentData, rangeOf, totalItems, next, prev } = usePagination(bookmarks, 8);
 	return bookmarks.length ? (
 		<CardContainer>
-			{currentData().map((el) => (
-				<Card key={el.id} card={el} height={'425px'} />
+			{currentData().map((news) => (
+				<Card key={news.id} post={news} height={'425px'} />
 			))}
 			<Pagination range={rangeOf} total={totalItems} prevPage={() => prev()} nexPage={() => next()} />
 		</CardContainer>
