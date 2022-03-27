@@ -1,0 +1,18 @@
+import styled from 'styled-components'
+
+export const NewsContainer = styled('section')`
+  display: flex;
+  gap: 1.5rem;
+  margin: auto;
+`;
+export const CardContainer = styled('div')`
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-auto-rows: min-content;
+  grid-gap: 1.125rem;
+`;
+export const LatestResearch = styled('div')`
+  max-width: 478px;
+  width: 100%;
+`;

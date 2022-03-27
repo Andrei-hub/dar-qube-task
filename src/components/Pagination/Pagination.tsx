@@ -1,10 +1,34 @@
-import React from 'react';
+import { FC } from 'react';
+import {ButtonWrapper, Button, PaginationContainer, Range, Amount, PaginationNumber } from './Pagination.styled';
 
-const Pagination = () => {
+interface Props {
+    total: number,
+    range:string,
+    prevPage:any,
+    nexPage:any,
+}
+
+const Pagination:FC<Props> = ({total,range,prevPage,nexPage}) => {
     return (
-        <div>
-            Pagination
-        </div>
+        <PaginationContainer>
+            <PaginationNumber>
+                <Range>
+                 {range}
+                </Range>
+                <Amount>out of {total}</Amount>
+            </PaginationNumber>
+
+            <ButtonWrapper>
+                <Button
+                     onClick={prevPage}
+                >
+                    previous
+                </Button>
+                <Button
+                    onClick={nexPage}
+                >next</Button>
+            </ButtonWrapper>
+        </PaginationContainer>
     );
 };
 

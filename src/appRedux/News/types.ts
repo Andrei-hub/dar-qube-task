@@ -1,9 +1,10 @@
-import {Post, PostType} from "types";
+import {Post} from "types";
 
 export interface News {
     loadingData:boolean;
     news:Post[];
-    activeTab: PostType.NEWS | PostType.BOOKMARKS;
+    bookMarks:number[];
+    searchParams: string;
     page: number;
     rowsPerPage: number;
 }
